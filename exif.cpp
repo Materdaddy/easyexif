@@ -73,7 +73,7 @@ int ParseEXIF(unsigned char *buf, unsigned len, EXIFInfo &result) {
 	if(offs == len-1)
 		return PARSE_EXIF_ERROR_NO_EXIF;
 	offs += 4;
-	if(buf[offs] != 0x45 && buf[offs+1] != 0x78 && buf[offs+2] != 0x69) 
+	if(buf[offs] != 0x45 || buf[offs+1] != 0x78 || buf[offs+2] != 0x69) 
 		return PARSE_EXIF_ERROR_NO_EXIF;
 	
 	// Get byte alignment (Motorola or Intel)
