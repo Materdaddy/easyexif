@@ -154,7 +154,8 @@ int ParseEXIF(unsigned char *buf, unsigned len, EXIFInfo &result) {
 
 			case 0x920a:
 				// Focal length in mm
-				result.focalLength = *((unsigned*)(buf+ifdOffset+coffs));
+				// result.focalLength = *((unsigned*)(buf+ifdOffset+coffs));
+        result.focalLength = parseEXIFrational(buf+ifdOffset+coffs);            
 				break;
 
 			case 0x829D:
