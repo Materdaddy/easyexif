@@ -53,6 +53,15 @@ public:
 	unsigned focalLength;		// Focal length of lens (millimeters)
 	float FStop;				// F-number of lens = 1/FStop 
 	float exposureTime;			// Exposure time in seconds
+  struct LatLng {
+    double degree;
+    double minutes;
+    double seconds;
+    LatLng() : degree(-360), minutes(-360), seconds(-360) {}
+  };
+  LatLng GPSLatitude;
+  LatLng GPSLongitude;
+  double GPSAltitude;
 
 	// Destructor
 	~EXIFInfo() {
