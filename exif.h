@@ -53,6 +53,7 @@ public:
 	unsigned focalLength;		// Focal length of lens (millimeters)
 	float FStop;				// F-number of lens = 1/FStop 
 	float exposureTime;			// Exposure time in seconds
+	unsigned short orientation; // Orientation
   struct LatLng {
     double degree;
     double minutes;

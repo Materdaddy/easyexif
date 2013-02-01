@@ -136,6 +136,11 @@ int ParseEXIF(unsigned char *buf, unsigned len, EXIFInfo &result) {
       case 0x8825:
         gpsIFD = ifdOffset + coffs;
         break;
+
+      case 0x112:
+        // Orientation
+        result.orientation = parse16(buf+offs+8, alignIntel);
+        break;
     }
     offs += 12;
   }
